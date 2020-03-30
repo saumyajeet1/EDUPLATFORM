@@ -61,7 +61,7 @@ class Header extends Component {
                      this.props.user.userData.isAuth?
                    
                     <li className="nav-item">
-                    <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"10px"}} to="/allalum" >VIEW YOUR CV</Link>
+                    <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"10px"}} to="/show" >VIEW YOUR CV</Link>
                     </li>
                     :null
                     :null

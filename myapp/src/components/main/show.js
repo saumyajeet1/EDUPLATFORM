@@ -117,8 +117,8 @@ componentDidMount(){
             }
 
                 </div>
-        <button onClick={()=> window.print()}>GENERATE PDF</button>
-        
+        {/* <button onClick={()=> window.print()}>GENERATE PDF</button>
+         */}
             </div>
         );
     }
