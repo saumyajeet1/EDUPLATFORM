@@ -1,0 +1,134 @@
+import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import { Link } from 'react-router-dom';
+import {log} from "../actions/memberactions"
+import logo from '../../images/logo.png'
+
+class Header extends Component {
+  
+
+  
+   logoutuser=()=>{
+       this.props.dispatch(log()).then(res=>{
+           console.log('logout')
+           
+        }).catch(err=>
+        console.log(err)
+        )
+   }
+   
+    render() {
+      console.log(this.props.user.userData)
+        return (
+
+             <div className='header'>
+               {/* <div className="containerl">
+               <img className="limg" src={logo} alt="eduplat" />
+             <div className="heading1">EduStream</div>
+             <div className="heading2">Online Student Kit</div>
+             </div>
+               */}
+
+
+
+
+             <nav className="navbar navbar-expand-md bg-dark navbar-dark">
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div className="collapse navbar-collapse" id="collapsibleNavbar">
+                 
+              <ul className="navbar-nav">
+              <li className="nav-item">
+                  <Link className ="nav-link"  style={{fontFamily:"Times new roman",fontSize:"1vw"}} to="/">HOME</Link>
+                  </li>
+ 
+                   {
+                     this.props.user.userData?
+                     this.props.user.userData.isAuth?
+                 
+                    <li className="nav-item">
+                    <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"1vw"}} to="/details" >ADD ACADEMIC DETAILS</Link>
+                    </li>
+                    :null
+                    :null
+                   }
+                   {/* <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> */}
+
+                   
+                   {
+                     this.props.user.userData?
+                     this.props.user.userData.isAuth?
+                   
+                    <li className="nav-item">
+                    <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"1vw"}} to="/allalum" >VIEW YOUR CV</Link>
+                    </li>
+                    :null
+                    :null
+                   }
+
+                   
+             {
+                     this.props.user.userData?
+                     this.props.user.userData.isAuth?
+                   
+                    <li className="nav-item">
+                    <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"1vw"}} to="/addnews" >ADD AWARD</Link>
+                    </li>
+                    :null
+                    :null
+                   }
+                  
+     
+                  {
+                     this.props.user.userData?
+                     this.props.user.userData.isAuth?
+                   
+                    <li className="nav-item">
+                    <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"1vw"}} to="/addnews" >ADD ACADEMIC RECORDS</Link>
+                    </li>
+                    :null
+                    :null
+                   }
+                  
+                  
+                
+                  {
+                    !this.props.user.userData?
+                  <li className="nav-item">
+                  <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"1vw"}} to="/login" >LOGIN</Link>
+                  </li>:null
+                  }
+                  
+              <li className="nav-item">
+                  <Link className ="nav-link " style={{fontFamily:"Times new roman",fontSize:"1vw"}} to="/register">REGISTER</Link>    
+                  </li>
+                  {this.props.user.userData?
+                  
+                    !this.props.user.userData.isAuth?
+                    <li className="nav-item">
+                    <Link className ="nav-link"  style={{fontFamily:"Times new roman",fontSize:"1vw"}} to="/login">LOGIN</Link>
+                    </li>
+                    :
+                    <li className="nav-item">
+                    <Link className ="nav-link " style={{fontFamily:"Times new roman",fontSize:"1vw"}} to="/logout" onClick={(event)=>this.logoutuser()}>LOGOUT</Link>
+                    </li>:null
+    }
+              </ul>
+             </div>  
+            </nav>
+            <br></br>
+            </div>
+                        
+        );
+    }
+}
+
+const mapStateToProps=(state)=>{
+    return{
+      user:state.member,
+    }
+      
+}
+
+export default connect(mapStateToProps)(Header);
