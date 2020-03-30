@@ -192,7 +192,6 @@ submitform=(event)=>{
     console.log(this.props.user.member)
     if(true){
         this.props.dispatch(adddetails(data)).then((response)=>{
-            if(response.payload.success){
              console.log('hurray')
                 this.setState({
                     formSuccess:true,
@@ -203,12 +202,6 @@ submitform=(event)=>{
                 this.props.history.push('/show')
                 console.log('dffdfd')
                 },5000)
-            }
-                else{
-                    this.setState({
-                        formError:true
-                    })
-                }
             }
         )}
     }

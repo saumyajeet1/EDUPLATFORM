@@ -56,6 +56,10 @@ const recordSchema=mongoose.Schema({
         type:Array,
         default:[]
     },
+    skills:{
+        type:Array,
+        default:[]
+    },
     
 
 })

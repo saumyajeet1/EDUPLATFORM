@@ -66,7 +66,17 @@ class Header extends Component {
                     :null
                     :null
                    }
-
+           
+           {
+                     this.props.user.userData?
+                     this.props.user.userData.isAuth?
+                   
+                    <li className="nav-item">
+                    <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"10px"}} to="/skill" >ADD SKILLS</Link>
+                    </li>
+                    :null
+                    :null
+                   }
                    
              {
                      this.props.user.userData?

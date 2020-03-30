@@ -14,10 +14,13 @@ import Forgot from './components/main/forgotpass';
 import Forget from './components/main/forget'
 import Addaward from './components/main/addaward'
 import Addacademic from './components/main/addacademic'
+import Addskill from './components/main/addskills'
 import Chat from "./components/Layout"
 import Live from "./components/main/live"
 import Auth from './components/hoc/auth'
 import ChatContainer from './components/main/ChatContainer';
+
+
 const Routes = () => {
     return (
         <Layout>
@@ -29,8 +32,6 @@ const Routes = () => {
             <Route exact component={Auth(Live,null)} path="/live"/>
 
             
-            <Route exact component={Auth(Live,null)} path="/live"/>
-        
             <Route exact component={Auth(Register,null)} path="/register"/>
         
             <Route exact component={Auth(Login,null)} path="/login"/>
@@ -38,6 +39,8 @@ const Routes = () => {
             <Route exact component={Auth(Show,true)} path="/show"/>
 
             <Route exact component={Auth(Award,true)} path="/award"/>
+            <Route exact component={Auth(Addskill,true)} path="/skill"/>
+            
             
             <Route exact component={Auth(Education,true)} path="/qualify"/>
 

@@ -426,6 +426,35 @@ app.post('/api/records/addaward',auth,(req,res)=>{
 })
 })
 
+
+
+app.post('/api/records/addskill',auth,(req,res)=>{
+    Member.findOne({
+        '_id':req.user._id
+     }).then(response=>{
+         console.log(response.email)
+    Record.findOne({'email':response.email},(err,record)=>{
+        if(!record){
+        res.status(400).json({
+            loginSuccess:false,
+            message:'Unable to Add Your Record'
+        })
+        }else{
+            console.log("hfffffh")
+            console.log(req.body)
+            console.log(req.body)
+            record.skills.push(req.body)
+            record.save((err,doc)=>{
+                if(err) return res.json({success:false,err});
+                
+                res.send(doc.name)
+                
+            })
+        }
+    })
+   
+})
+})
 // app.post('/api/records/addacademic',auth,(req,res)=>{
   
 //     const academic = new Academic(req.body);

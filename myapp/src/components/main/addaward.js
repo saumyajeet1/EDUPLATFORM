@@ -99,19 +99,16 @@ submitform=(event)=>{
     console.log(this.props.user.member)
     if(true){
         this.props.dispatch(addaward(data)).then((response)=>{
-            if(response.payload.success){
+        
              console.log('hurray')
                 this.setState({
                     formSuccess:true,
                     formError:false
                 })
-            }
-                else{
-                    this.setState({
-                        formError:true
-                    })
-                }
-            }
+                setTimeout(()=>{
+                    this.props.history.push('/addaward');
+                },500)
+              }
         )}
     }
 
@@ -120,18 +117,16 @@ submitform=(event)=>{
         return (
             <div className="container">
             <div className='add'>
-                <div className="row">
-                <div className="headtitle">
-                    <h2 className="neon" style={{fontFamily: 'IBM Plex Serif'}}>ADD AWARD</h2>
+                <div className="headtitle row">
+                    <h2 className="neon" style={{fontFamily:"sans serif"}}>ADD AWARD INFORMATION</h2>
                 </div>
-                <br></br><br></br><br></br><br></br><br></br><br></br>
-                <div className="each">
+              <div className="each">
               <FileUpload
                     imageHandler={(images)=>this.imageHandler(images)}
                     reset={this.state.formSuccess}/>
               </div>
-            <br></br><br></br><br></br>
-                </div><br></br><br></br>
+            <div className="row"></div>
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
             <div className="jumbotron">
 
             <div className="row">
@@ -143,7 +138,8 @@ submitform=(event)=>{
                 />
             </div>
             </div>
-
+        
+       
             <div className="row">
             <div className="each">
                <FormFields

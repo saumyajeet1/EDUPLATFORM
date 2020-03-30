@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {
+    ADDSKILL,
     WRITEUSER,
     ADDDETAIL,
     ADDRECORD,
@@ -117,6 +118,17 @@ export function searchyear(data){
         .then(response => response.data);
     return {
         type:SEARCHYR,
+        payload: request
+    }
+}
+
+
+export function addskill(data){
+    console.log(data)
+    const request = axios.post(`${RECORD_SERVER}/addskill`,data)
+        .then(response => response.data);
+    return {
+        type:ADDSKILL,
         payload: request
     }
 }

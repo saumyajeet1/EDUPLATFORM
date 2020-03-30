@@ -9,7 +9,8 @@ import {
     ENDSESSION,
     ADDACADEMIC,
     ALLACADEMIC,
-    EDITDATA
+    EDITDATA,
+    ADDSKILL
 } from "../actions/types";
 
 export default function(state={},action){
@@ -18,6 +19,8 @@ export default function(state={},action){
             return {...state, edit:action.payload }
         case ADDRECORD:
             return {...state, award:action.payload }
+        case ADDSKILL:
+            return {...state, skill:action.payload }
         case ADDACADEMIC:
             return {...state, academic:action.payload }
         case ALLACADEMIC:
