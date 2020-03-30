@@ -6,13 +6,22 @@ import {
     ADDAWARD,
     ALLAWARDS,
     WRITEUSER,
-    ENDSESSION
+    ENDSESSION,
+    ADDACADEMIC,
+    ALLACADEMIC,
+    EDITDATA
 } from "../actions/types";
 
 export default function(state={},action){
     switch(action.type){ 
+        case EDITDATA:
+            return {...state, edit:action.payload }
         case ADDRECORD:
             return {...state, award:action.payload }
+        case ADDACADEMIC:
+            return {...state, academic:action.payload }
+        case ALLACADEMIC:
+            return {...state, allacademic:action.payload }  
         case ENDSESSION:
             return {...state, endsession:action.payload }
         case GETRECORD:

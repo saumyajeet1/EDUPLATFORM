@@ -10,14 +10,13 @@ class Show extends Component {
 
     }
 componentDidMount(){
-    this.props.dispatch(getrecords()).then(response=>{
+    this.props.dispatch(getrecords(this.props.user.userData.id)).then(response=>{
         console.log(response.payload)
         this.setState({
           ...response.payload,
            pic:response.payload.images
       })
     })
-
 }
 
     render() {
@@ -29,19 +28,19 @@ componentDidMount(){
                 <h3 className="neon" style={{textAlign:'center'}}>
                     YOUR INFORMATION
                 </h3>
-                <div className="row">
-                <div className="col-lg-6 col-sm-6">
-                    <FieldRow name={'name'}
-                    value={this.state.name}
-                    />
-                </div>
 
-            <div className="col-lg-6 col-sm-6">
+         <div className="row">
+            <div className="col-lg-12 col-md-12 col-xs-12 col-sm-12">
                 <Pic image={this.state.pic?this.state.pic[0].url:null} text={"PHOTO"}/>
             </div>
-                    
-            </div>
+        </div>
 
+
+            <div className="row">
+                 <FieldRow name={'name'}
+                    value={this.state.name}
+                 />
+            </div>
 
             <div className="row">
                  <FieldRow name={'email'}
@@ -65,16 +64,57 @@ componentDidMount(){
 
                 
             <div className="row">
-                <FieldRow name={'Year of Passing'}
-                    value={this.state.year}
+                <FieldRow name={'Address'}
+                    value={this.state.address}
                 />
             </div>
+
+            
+            <div className="row">
+                <FieldRow name={'Date of birth'}
+                    value={this.state.dateofbirth}
+                />
+            </div>
+
+            <div className="row">
+                <FieldRow name={'Contact Number'}
+                    value={this.state.phone}
+                 />
+            </div>
+
 
             <div className="row">
                 <FieldRow name={'Additional Information'}
                     value={this.state.additional}
                  />
             </div>
+            <h3 className="neon" style={{textAlign:'center'}}>
+                    YOUR ACADEMIC RECORDS
+                </h3>
+   
+            {
+                this.state.academicrecords?
+                this.state.academicrecords.map((acad,i)=>(
+                    <div className="row">
+                   <p style={{fontSize:"15px",fontFamily:'IBM Plex Serif'}}> {acad.name}:{acad.subject}</p>
+                    </div>
+                ))
+                :null
+            }
+
+            <h3 className="neon" style={{textAlign:'center'}}>
+                    YOUR AWARDS
+                </h3>
+       
+            {
+                this.state.awards?
+                this.state.academicrecords.map((acad,i)=>(
+                    <div className="row">
+                   <p style={{fontSize:"15px",fontFamily:'IBM Plex Serif'}}> {acad.name}:{acad.subject}</p>
+                    </div>
+                ))
+                :null
+            }
 
                 </div>
         <button onClick={()=> window.print()}>GENERATE PDF</button>

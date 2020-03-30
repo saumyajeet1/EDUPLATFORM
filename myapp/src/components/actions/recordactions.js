@@ -6,10 +6,13 @@ import {
     ALLAWARDS,
     ALLALUM,
     ADDAWARD,
+    ADDACADEMIC,
     SEARCHYR,
     GETRECORD,
     ENDSESSION,
-    ADDEDUCATION
+    ADDEDUCATION,
+    ALLACADEMIC,
+    EDITDATA
 } from './types';
 
 import { RECORD_SERVER } from '../utils/misc';
@@ -36,6 +39,32 @@ export function addaward(data){
 }
 
 
+export function addacademic(data){
+    const request = axios.post(`${RECORD_SERVER}/addacademic`,data)
+        .then(response => response.data);
+    
+    return {
+        type: ADDACADEMIC,
+        payload: request
+    }
+}
+
+
+export function editdata(field,info){
+
+    const data={
+        field,
+        info
+    }
+
+    const request = axios.post(`${RECORD_SERVER}/editdata`,data)
+        .then(response => response.data);
+    
+    return {
+        type: EDITDATA,
+        payload: request
+    }
+}
 
 
 export function allalum(){
@@ -44,6 +73,17 @@ export function allalum(){
     
     return {
         type: ALLALUM,
+        payload: request
+    }
+}
+
+
+export function allacademic(){
+    const request = axios.get(`${RECORD_SERVER}/allacademic`)
+        .then(response => response.data);
+    
+    return {
+        type: ALLACADEMIC,
         payload: request
     }
 }
@@ -59,8 +99,8 @@ export function allawards(){
 }
 
 
-export function getrecords(){
-    const request = axios.get(`${RECORD_SERVER}/getrecords`)
+export function getrecords(id){
+    const request = axios.get(`${RECORD_SERVER}/getrecords?${id}`)
         .then(response => response.data);
     
     return {

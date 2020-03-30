@@ -15,4 +15,8 @@ export const ADDEDUCATION="addeducation"
 export const WRITEUSER="writeuser"
 export const ENDSESSION="endsession"
 
+export const ADDACADEMIC="addacademic"
+export const ALLACADEMIC="allacademic"
+export const EDITDATA="editdata"
+
 export const SET_HEADER="setheaders"

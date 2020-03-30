@@ -13,7 +13,8 @@ import Education from './components/main/qualification';
 import Forgot from './components/main/forgotpass';
 import Forget from './components/main/forget'
 import Allalum from './components/main/allcards'
-import Addnews from './components/main/addaward'
+import Addaward from './components/main/addaward'
+import Addacademic from './components/main/addacademic'
 import Chat from "./components/Layout"
 import Live from "./components/main/live"
 import Auth from './components/hoc/auth'
@@ -51,7 +52,8 @@ const Routes = () => {
             <Route exact component={Auth(Forget,null)} path="/forget"/>
 
             <Route exact component={Auth(Allalum,true)} path="/allalum"/>
-            <Route exact component={Auth(Addnews,true)} path="/addnews"/>
+            <Route exact component={Auth(Addaward,true)} path="/addaward"/>
+            <Route exact component={Auth(Addacademic,true)} path="/addacademic"/>
             <Route exact component={Auth(Chat,true)} path="/livechat"/>
             <Route exact component={Auth(ChatContainer,true)} path="/chat"/>
             

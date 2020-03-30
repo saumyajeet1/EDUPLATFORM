@@ -25,6 +25,51 @@ class Details extends Component {
             validationMessage:'',
             label:true
         },
+        dateofbirth: {
+            element:'input',
+            value:'',
+            config:{
+                name:'DATE OF BIRTH',
+                placeholder:'Enter your Date of Birth here',
+                type:'text'
+            },
+            validation:{
+                required:true
+            },
+            valid:true,
+            validationMessage:'',
+            label:true
+        },
+        address: {
+            element:'input',
+            value:'',
+            config:{
+                name:'ADDRESS',
+                placeholder:'Enter your Address here',
+                type:'text'
+            },
+            validation:{
+                required:true
+            },
+            valid:true,
+            validationMessage:'',
+            label:true
+        },
+        phone: {
+            element:'input',
+            value:'',
+            config:{
+                name:'CONTACT NUMBER',
+                placeholder:'Enter your contact number here',
+                type:'number'
+            },
+            validation:{
+                required:false
+            },
+            valid:false,
+            validationMessage:'',
+            label:true
+        },
         workplace: {
             element:'input',
             value:'',
@@ -55,21 +100,7 @@ class Details extends Component {
             validationMessage:'',
             label:true
         },
-        year: {
-            element:'input',
-            value:'',
-            config:{
-                name:'Year of Passing Out',
-                placeholder:'Enter the year you passed out',
-                type:'text'
-            },
-            validation:{
-                required:true
-            },
-            valid:true,
-            validationMessage:'',
-            label:true
-        },
+        
         additional: {
             element:'textarea',
             value:'',
@@ -86,37 +117,37 @@ class Details extends Component {
             label:true
         },
         
-        academicrecords: {
-            element:'textarea',
-            value:'',
-            config:{
-                name:'Academic Qualifications',
-               type:'text',
-               placeholder:'Enter academic qualifications here',  
-            },
-            validation:{
-                required:true
-            },
-            valid:false,
-            validationMessage:'',
-            label:true
-        },
+        // academicrecords: {
+        //     element:'textarea',
+        //     value:'',
+        //     config:{
+        //         name:'Academic Qualifications',
+        //        type:'text',
+        //        placeholder:'Enter academic qualifications here',  
+        //     },
+        //     validation:{
+        //         required:true
+        //     },
+        //     valid:false,
+        //     validationMessage:'',
+        //     label:true
+        // },
         
-        awards: {
-            element:'textarea',
-            value:'',
-            config:{
-                name:'Awards',
-               type:'text',
-               placeholder:'Enter awards and acheivements here',  
-            },
-            validation:{
-                required:true
-            },
-            valid:false,
-            validationMessage:'',
-            label:true
-        },
+        // awards: {
+        //     element:'textarea',
+        //     value:'',
+        //     config:{
+        //         name:'Awards',
+        //        type:'text',
+        //        placeholder:'Enter awards and acheivements here',  
+        //     },
+        //     validation:{
+        //         required:true
+        //     },
+        //     valid:false,
+        //     validationMessage:'',
+        //     label:true
+        // },
         email: {
             element:'input',
             value:'',
@@ -167,6 +198,11 @@ submitform=(event)=>{
                     formSuccess:true,
                     formError:false
                 })
+                
+            setTimeout(()=>{
+                this.props.history.push('/show')
+                console.log('dffdfd')
+                },5000)
             }
                 else{
                     this.setState({
@@ -204,7 +240,7 @@ imageHandler=(images)=>{
                     reset={this.state.formSuccess}/>
               </div>
             <div className="row"></div>
-            <br></br><br></br><br></br><br></br><br></br><br></br>
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
             <div className="jumbotron">
 
             <div className="row">
@@ -212,6 +248,37 @@ imageHandler=(images)=>{
                <FormFields
                   formdata={this.state.formdata.name}
                   id={'name'}
+                  change={(event)=>{this.updateform(event)}}
+                />
+            </div>
+            </div>
+            
+            <div className="row">
+             <div className="each">
+               <FormFields
+                  formdata={this.state.formdata.dateofbirth}
+                  id={'dateofbirth'}
+                  change={(event)=>{this.updateform(event)}}
+                />
+            </div>
+            </div>
+            
+            <div className="row">
+             <div className="each">
+               <FormFields
+                  formdata={this.state.formdata.address}
+                  id={'address'}
+                  change={(event)=>{this.updateform(event)}}
+                />
+            </div>
+            </div>
+
+            
+            <div className="row">
+             <div className="each">
+               <FormFields
+                  formdata={this.state.formdata.phone}
+                  id={'phone'}
                   change={(event)=>{this.updateform(event)}}
                 />
             </div>
@@ -247,16 +314,7 @@ imageHandler=(images)=>{
             </div>
             </div>
          
-            <div className="row">
-            <div className="each">
-               <FormFields
-                  formdata={this.state.formdata.year}
-                  id={'year'}
-                  change={(event)=>{this.updateform(event)}}
-                />
-            </div>
-            </div>
-         
+            
             <div className="row">
             <div className="each">
                <FormFields
@@ -267,26 +325,6 @@ imageHandler=(images)=>{
             </div>
             </div>
           
-          
-            <div className="row">
-            <div className="each">
-               <FormFields
-                  formdata={this.state.formdata.academicrecords}
-                  id={'academicrecords'}
-                  change={(event)=>{this.updateform(event)}}
-                />
-            </div>
-            </div>
-          
-            <div className="row">
-            <div className="each">
-               <FormFields
-                  formdata={this.state.formdata.awards}
-                  id={'awards'}
-                  change={(event)=>{this.updateform(event)}}
-                />
-            </div>
-            </div>
           
             <div className="block row">
           <center>   

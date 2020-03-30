@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {update,validform, generatedata} from '../utils/formtions'
-import {addaward}  from '../actions/recordactions'
+import {addacademic}  from '../actions/recordactions'
 import FormFields from '../utils/formfields';
 import FileUpload from '../utils/fileupload'
-class Addaward extends Component {
+class Addacademic extends Component {
 
     state={ 
         formSuccess:false,
@@ -15,7 +15,7 @@ class Addaward extends Component {
             value:'',
             config:{
                 name:'NAME',
-                placeholder:'Enter the name of the award here',
+                placeholder:'Enter the name of the record here',
                 type:'text'
             },
             validation:{
@@ -98,7 +98,7 @@ submitform=(event)=>{
     const data=generatedata(this.state.formdata,'register')
     console.log(this.props.user.member)
     if(true){
-        this.props.dispatch(addaward(data)).then((response)=>{
+        this.props.dispatch(addacademic(data)).then((response)=>{
             if(response.payload.success){
              console.log('hurray')
                 this.setState({
@@ -122,10 +122,12 @@ submitform=(event)=>{
             <div className='add'>
                 <div className="row">
                 <div className="headtitle">
-                    <h2 className="neon" style={{fontFamily: 'IBM Plex Serif'}}>ADD AWARD</h2>
+                    <h2 className="neon" style={{fontFamily: 'IBM Plex Serif'}}>ADD ACADEMIC RECORDS</h2>
+                
                 </div>
-                <br></br><br></br><br></br><br></br><br></br><br></br>
+                <br></br><br></br>
                 <div className="each">
+                <br></br><br></br>
               <FileUpload
                     imageHandler={(images)=>this.imageHandler(images)}
                     reset={this.state.formSuccess}/>
@@ -178,4 +180,4 @@ const mapStateToProps=(state)=>{
       
 }
 
-export default connect(mapStateToProps)(Addaward);
+export default connect(mapStateToProps)(Addacademic);

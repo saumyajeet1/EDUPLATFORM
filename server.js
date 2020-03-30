@@ -229,13 +229,27 @@ app.get('/api/records/allalum',auth,(req,res)=>{
     console.log('hhhh')
      Award
      .find()
-     .exec((err,allnews)=>{
+     .exec((err,allawards)=>{
          if(err){
              console.log(err)
              res.status(400).send(err)
              
          }
-        return res.status(200).send(allnews)
+        return res.status(200).send(allawards)
+     })
+  })
+ 
+  app.get('/api/records/allacademic',(req,res)=>{
+    console.log('hhhh')
+     Academic
+     .find()
+     .exec((err,allacademic)=>{
+         if(err){
+             console.log(err)
+             res.status(400).send(err)
+             
+         }
+        return res.status(200).send(allacademic)
      })
   })
  
@@ -344,49 +358,20 @@ app.post('/api/records/adddetail',auth,(req,res)=>{
 })
 
 
-app.post('/api/records/addaward',auth,(req,res)=>{
+// app.post('/api/records/addaward',auth,(req,res)=>{
   
-    const award = new Award(req.body);
-    award.save((err,doc)=>{
-        console.log(err)
-        if(err) return res.json({success:false,err});
-        res.status(200).json({
-            success: true,doc
-        })
-        console.log(doc.name)  
-    })
-})
-
-app.post('/api/records/records',auth,(req,res)=>{
-    Alumni.findOne({
-        '_id':req.user._id
-     }).then(response=>{
-         console.log(response.email)
-    Record.findOne({'email':response.email},(err,record)=>{
-        if(!record){
-        res.status(400).json({
-            loginSuccess:false,
-            message:'Unable to Add Your Record'
-        })
-        }else{
-            console.log("hfffffh")
-            console.log(req.body)
-            record.awards.push(req.body)
-            record.save((err,doc)=>{
-                if(err) return res.json({success:false,err});
-                
-                res.send(doc.name)
-                
-            })
-        }
-    })
-   
-})
-})
-
-
-app.post('/api/records/education',auth,(req,res)=>{
-    Alumni.findOne({
+//     const award = new Award(req.body);
+//     award.save((err,doc)=>{
+//         console.log(err)
+//         if(err) return res.json({success:false,err});
+//         res.status(200).json({
+//             success: true,doc
+//         })
+//         console.log(doc.name)  
+//     })
+// })
+app.post('/api/records/addacademic',auth,(req,res)=>{
+    Member.findOne({
         '_id':req.user._id
      }).then(response=>{
          console.log(response.email)
@@ -413,6 +398,48 @@ app.post('/api/records/education',auth,(req,res)=>{
 })
 })
 
+app.post('/api/records/addaward',auth,(req,res)=>{
+    Member.findOne({
+        '_id':req.user._id
+     }).then(response=>{
+         console.log(response.email)
+    Record.findOne({'email':response.email},(err,record)=>{
+        if(!record){
+        res.status(400).json({
+            loginSuccess:false,
+            message:'Unable to Add Your Record'
+        })
+        }else{
+            console.log("hfffffh")
+            console.log(req.body)
+            console.log(req.body)
+            record.awards.push(req.body)
+            record.save((err,doc)=>{
+                if(err) return res.json({success:false,err});
+                
+                res.send(doc.name)
+                
+            })
+        }
+    })
+   
+})
+})
+
+// app.post('/api/records/addacademic',auth,(req,res)=>{
+  
+//     const academic = new Academic(req.body);
+//     academic.save((err,doc)=>{
+//         console.log(err)
+//         if(err) return res.json({success:false,err});
+//         res.status(200).json({
+//             success: true,doc
+//         })
+//         console.log(doc.name)  
+//     })
+// })
+
+
 app.post('/api/records/removerecord',auth,(req,res)=>{
     Record.findByIdAndRemove({'email':req.body.email},(err,member)=>{
         if(!member){
@@ -425,7 +452,7 @@ app.post('/api/records/removerecord',auth,(req,res)=>{
     })
 
     app.get('/api/records/getrecords',auth,(req,res)=>{
-    Alumni.findOne({
+    Member.findOne({
        '_id':req.user._id
     }).then(response=>{
         console.log(response.email)

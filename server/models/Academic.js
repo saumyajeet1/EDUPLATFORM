@@ -3,7 +3,7 @@ require('dotenv').config()
 const validator=require('validator');
 const Schema = mongoose.Schema;
 
-const awardSchema=mongoose.Schema({
+const academicSchema=mongoose.Schema({
     
     name:{
         type:String,
@@ -23,7 +23,7 @@ const awardSchema=mongoose.Schema({
 },{timestamps:true})
 
 
-const Award=mongoose.model('Award',awardSchema)
+const Academic=mongoose.model('Academic',awardSchema)
 
 
-module.exports={Award}
+module.exports={Academic}
