@@ -52,7 +52,7 @@ module.exports = function(socket){
 		}
 		console.log(roomname,user)
 	
-		io.of('/').to(roomname).emit("activemessage",{message})
+		io.of('/').to(roomname).emit("activemessage",{message,user})
 
 
 		console.log(getAllRoomMembers(roomname))
