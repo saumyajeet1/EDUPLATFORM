@@ -919,15 +919,9 @@ fieldset {
 .sidebar-wrapper {
   background: #42A8C0;
   position: absolute;
-<<<<<<< HEAD
-  right: 0;
-  width: 240px;
-  min-height: 440px;
-=======
   left: 0;
   width: 240px;
   min-height: 100%;
->>>>>>> 40d3ef151237809cc6a77f1a34cfd06f9d852280
   color: #fff;
 }
 
@@ -970,9 +964,6 @@ fieldset {
 .sidebar-wrapper .contact-list li {
   margin-bottom: 15px;
 }
-<<<<<<< HEAD
-
-=======
 .sidebar-wrapper .address-list{
   font-size: 12px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -981,7 +972,6 @@ fieldset {
   overflow:auto;
 
 }
->>>>>>> 40d3ef151237809cc6a77f1a34cfd06f9d852280
 .sidebar-wrapper .contact-list li:last-child {
   margin-bottom: 0;
 }
@@ -1061,11 +1051,7 @@ fieldset {
 .main-wrapper {
   background: #fff;
   padding: 60px;
-<<<<<<< HEAD
-  padding-right: 300px;
-=======
   padding-left: 250px;
->>>>>>> 40d3ef151237809cc6a77f1a34cfd06f9d852280
 }
 
 .main-wrapper .section-title {
@@ -1101,11 +1087,7 @@ fieldset {
 
 .main-wrapper .section-title .icon-holder .svg-inline--fa {
   font-size: 14px;
-<<<<<<< HEAD
-  margin-top: 6px;
-=======
   margin-top: 10px;
->>>>>>> 40d3ef151237809cc6a77f1a34cfd06f9d852280
 }
 
 .main-wrapper .section {
@@ -1221,8 +1203,7 @@ fieldset {
 @media (min-width: 992px) {
   .skillset .level-title {
     display: inline-block;
-    float: left;
-    width: 30%;
+        width: 30%;
     margin-bottom: 0;
   }
 }
