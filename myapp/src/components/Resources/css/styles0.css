@@ -799,6 +799,10 @@ fieldset {
 }
 @media(max-width:767px)
 {
+    #contact{
+      width:auto;
+      margin-right:100px;
+    }
     #image{
         height:30px;
         width:30px;

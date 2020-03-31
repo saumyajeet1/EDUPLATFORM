@@ -38,10 +38,12 @@ class Header extends Component {
                 <span className="navbar-toggler-icon"></span>
               </button>
               <div className="collapse navbar-collapse" id="collapsibleNavbar">
+
+                
                  
               <ul className="navbar-nav">
               <li className="nav-item">
-                  <Link className ="nav-link"  style={{fontFamily:"Times new roman",fontSize:"10px"}} to="/">HOME</Link>
+                  <Link className ="nav-link"  style={{fontFamily:"Times new roman",fontSize:"15px"}} to="/">HOME</Link>
                   </li>
  
                    {
@@ -49,12 +51,12 @@ class Header extends Component {
                      this.props.user.userData.isAuth?
                  
                     <li className="nav-item">
-                    <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"10px"}} to="/details" >ADD ACADEMIC DETAILS</Link>
+                    <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"15px"}} to="/details" >ADD ACADEMIC DETAILS</Link>
                     </li>
                     :null
                     :null
                    }
-                   {/* <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> */}
+                   {/* <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> */}
 
                    
                    {
@@ -62,54 +64,54 @@ class Header extends Component {
                      this.props.user.userData.isAuth?
                    
                     <li className="nav-item">
-                    <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"10px"}} to="/show" >VIEW YOUR CV</Link>
+                    <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"15px"}} to="/show" >VIEW YOUR CV</Link>
                     </li>
                     :null
                     :null
                    }
-
-                  <li className="nav-item">
-                  <NavDropdown className="nav-link" title="Add User Data" id="basic-nav-dropdown">
-                          <NavDropdown.Item >{
+                   {
+                  this.props.user.userData?
+                  this.props.user.userData.isAuth?
+                
+                    <li className="nav-item dropdown">
+                      <a style={{fontFamily:"Times new roman",fontSize:"15px"}} className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Add User Data
+                      </a>
+                      <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a className="dropdown-item" >{
                      this.props.user.userData?
                      this.props.user.userData.isAuth?
                    
-                    <li className="nav-item">
-                    <Link className ="nav-link" style={{color:"black",fontFamily:"Times new roman",fontSize:"10px"}} to="/skill" >ADD SKILLS</Link>
-                    </li>
+                    
+                    <Link className ="nav-link-drop"  to="/skill" >ADD SKILLS</Link>
+                    
                     :null
                     :null
-                   }</NavDropdown.Item>
-                          
-                          
-                          <NavDropdown.Item >{
+                   }</a>
+                        <a className="dropdown-item" >{
                      this.props.user.userData?
                      this.props.user.userData.isAuth?
                    
-                    <li className="nav-item">
-                    <Link className ="nav-link" style={{color:"black",fontFamily:"Times new roman",fontSize:"10px"}} to="/addaward" >ADD AWARD</Link>
-                    </li>
+                    
+                    <Link className ="nav-link-drop"  to="/addaward" >ADD AWARD</Link>
+                    
                     :null
                     :null
-                   }</NavDropdown.Item>
-                          
-                          <NavDropdown.Item >{
+                   }</a>
+                        <a className="dropdown-item" >{
                      this.props.user.userData?
                      this.props.user.userData.isAuth?
                    
-                    <li className="nav-item">
-                    <Link className ="nav-link" style={{color:"black",fontFamily:"Times new roman",fontSize:"10px"}} to="/addacademic" >ADD ACADEMIC RECORDS</Link>
-                    </li>
+                    
+                    <Link className ="nav-link-drop"  to="/addacademic" >ADD ACADEMIC RECORDS</Link>
+  
                     :null
                     :null
-                   }</NavDropdown.Item>
-                         
-                            
-                         </NavDropdown>
-                   
+                   }</a>
+                      </div>
+                    </li>:null:null
 
-                  </li>
-
+    }
                   
              
 
@@ -118,7 +120,7 @@ class Header extends Component {
                      this.props.user.userData.isAuth?
                    
                     <li className="nav-item">
-                    <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"10px"}} to="/see my info" >SEE MY INFO</Link>
+                    <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"15px"}} to="/see my info" >SEE MY INFO</Link>
                     </li>
                     :null
                     :null
@@ -132,22 +134,24 @@ class Header extends Component {
                   {
                     !this.props.user.userData?
                   <li className="nav-item">
-                  <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"10px"}} to="/login" >LOGIN</Link>
+                  <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"15px"}} to="/login" >LOGIN</Link>
                   </li>:null
                   }
+                  {this.props.user.userData?
                   
+                  !this.props.user.userData.isAuth?
               <li className="nav-item">
-                  <Link className ="nav-link " style={{fontFamily:"Times new roman",fontSize:"10px"}} to="/register">REGISTER</Link>    
-                  </li>
+                  <Link className ="nav-link " style={{fontFamily:"Times new roman",fontSize:"15px"}} to="/register">REGISTER</Link>    
+                  </li>:null:null}
                   {this.props.user.userData?
                   
                     !this.props.user.userData.isAuth?
                     <li className="nav-item">
-                    <Link className ="nav-link"  style={{fontFamily:"Times new roman",fontSize:"10px"}} to="/login">LOGIN</Link>
+                    <Link className ="nav-link"  style={{fontFamily:"Times new roman",fontSize:"15px"}} to="/login">LOGIN</Link>
                     </li>
                     :
                     <li className="nav-item">
-                    <Link className ="nav-link " style={{fontFamily:"Times new roman",fontSize:"10px"}} to="/logout" onClick={(event)=>this.logoutuser()}>LOGOUT</Link>
+                    <Link className ="nav-link " style={{fontFamily:"Times new roman",fontSize:"15px"}} to="/logout" onClick={(event)=>this.logoutuser()}>LOGOUT</Link>
                     </li>:null
     }
               </ul>

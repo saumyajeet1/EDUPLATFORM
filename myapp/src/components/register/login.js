@@ -107,7 +107,7 @@ resetpassword=(event)=>{
     render() {
         return (
             this.state.loading?
-        <center> <CircularProgress thickness={7} size={100} style={{color:'grey'}} />  </center>
+        <center> <CircularProgress thickness={7} size={100} style={{color:'grey',marginBottom:"500px"}} />  </center>
             :
             <div className="containers">
                            
