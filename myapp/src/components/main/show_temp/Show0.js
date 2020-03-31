@@ -233,7 +233,7 @@ componentDidMount(){
            
 
     
-         <button onClick={()=> window.print()}>GENERATE PDF</button>
+         <button className="bhut" onClick={()=> window.print()}>GENERATE PDF</button>
         
             </div> 
  

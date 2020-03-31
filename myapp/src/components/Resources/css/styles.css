@@ -1248,9 +1248,10 @@ article,aside,details,figcaption,figure,section {
 
 #headshot img {
 	width: 100%;
-	height: auto;
+  height: auto;
+  border:1px solid black;
 	-webkit-border-radius: 50px;
-	border-radius: 50px;
+	border-radius: 5px;
 }
 
 #name {
@@ -1289,7 +1290,8 @@ article,aside,details,figcaption,figure,section {
 
 section {
 	border-top: 1px solid #dedede;
-	padding: 20px 0 0;
+  padding: 20px 0 0;
+  margin:50px
 }
 
 section:first-child {

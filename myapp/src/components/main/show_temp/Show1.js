@@ -4,6 +4,7 @@ import {getrecords}  from '../../actions/recordactions';
 // import FieldRow from "../utils/formrow"
 import Pic from '../../utils/pic';
 import {Container, Row, Col} from "react-bootstrap";
+import ButtonB from "../../UI/Button";
 
 class Show1 extends Component {
 
@@ -139,9 +140,14 @@ componentDidMount(){
     
 
 	</div>
-         <button className="bhut" onClick={()=> window.print()}>GENERATE PDF</button>
+		<div className="reg_row">
+		<ButtonB 
+		id="contact-submit"
+		className="bhut" onClick={()=> window.print()} text="GENERATE PDF"/>
         
-            </div> 
+		</div> 
+		</div>
+        
  
        
         );
