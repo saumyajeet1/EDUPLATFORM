@@ -78,7 +78,7 @@ if(isformvalid){
             },3000)
         }else{
             setTimeout(()=>{
-                this.props.history.push('/allalum');
+                this.props.history.push('/');
             },3000)
         }
          }

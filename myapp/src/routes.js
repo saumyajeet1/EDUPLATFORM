@@ -19,6 +19,7 @@ import Chat from "./components/Layout"
 import Live from "./components/main/live"
 import Auth from './components/hoc/auth'
 import ChatContainer from './components/main/ChatContainer';
+import Logout from "./components/main/Logout.js";
 
 
 const Routes = () => {
@@ -35,6 +36,7 @@ const Routes = () => {
             <Route exact component={Auth(Register,null)} path="/register"/>
         
             <Route exact component={Auth(Login,null)} path="/login"/>
+            <Route exact component={Auth(Logout,true)} path="/logout"/>
 
             <Route exact component={Auth(Show,true)} path="/show"/>
 
