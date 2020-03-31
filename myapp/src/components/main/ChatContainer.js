@@ -59,35 +59,7 @@ class ChatContainer extends Component {
 			console.log(this.state.chats)		
             },5000)
 					  }
-	resetChat = (chat)=>{
-	console.log('resetting the chat')
-	return this.addChat(chat, true)
-	}
-
-	addChat = (chat, reset = false)=>{
-		const { socket } = this.props
-		const { chats } = this.state
-
-		const newChats = reset ? [chat] : [...chats, chat]
-		this.setState({chats:newChats, activeChat:reset ? chat : this.state.activeChat})
-
-		const messageEvent = `MESSAGE_RECIEVED-${chat.id}`
-		
-		socket.on(messageEvent, this.addMessageToChat(chat.id))
-	}
-
-	addMessageToChat = (chatId)=>{
-		return message => {
-			const { chats } = this.state
-			let newChats = chats.map((chat)=>{
-				if(chat.id === chatId)
-					chat.messages.push(message)
-				return chat
-			})
-
-			this.setState({chats:newChats})
-		}
-	}
+	
 	
 	sendMessage = ( message)=>{
 		console.log(message,this.state.roomname,this.state.name)
