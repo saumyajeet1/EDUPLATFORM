@@ -108,7 +108,7 @@ componentDidMount(){
        
             {
                 this.state.awards?
-                this.state.academicrecords.map((acad,i)=>(
+                this.state.awards.map((acad,i)=>(
                     <div className="row">
                    <p style={{fontSize:"15px",fontFamily:'IBM Plex Serif'}}> {acad.name}:{acad.subject}</p>
                     </div>
