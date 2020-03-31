@@ -4,6 +4,15 @@ let connectedPeers = new Map()
 
 
 module.exports = function(socket){
+
+	socket.on('verifyroom',(roomname)=>{
+         if(availableRooms.includes(roomname)){
+			 socket.emit('room',true)
+		 }else{
+			socket.emit('room',false)
+		 }
+
+	})
 	roomList()
 
       socket.on('error',function(err){
