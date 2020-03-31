@@ -6,8 +6,11 @@ import five from '../../images/3.jpg'
 import six from '../../images/1.jpg'
 import {allawards} from '../actions/recordactions'
 import { Grid } from '@material-ui/core';
-import {setheader} from '../actions/memberactions'
-import { Container, Row, Col, Jumbotron, Button } from 'react-bootstrap';
+import flow from "../../images/flow.png"; 
+import aut1 from "../../images/aut1.png";
+import aut2 from "../../images/aut2.png";
+import Aux from "../hoc/Aux";
+import { Container, Row, Col, Jumbotron, Button, Image } from 'react-bootstrap';
 class Main extends Component {
 
     state={
@@ -40,44 +43,131 @@ class Main extends Component {
   //       }).catch(err=>console.log(err))
   //   }
 
-  // componentDidMount=()=>{
-  //   this.props.dispatch(setheader()).then(res=>{
-  //        console.log(res)              
-  //   }).catch(e=>{
-  //         console.log(e)
-  //   })
-  // }
+
 
     render() {
         var height="560px";
         return (
- 
-          <Container style={{marginTop:"20px"}}>
-   
+          <Aux>
+              <Container style={{marginTop:"20px"}}>
             <Row >
     
               <Col className="p-0"  style={{textAlign:"center"}}>
-                 <h1 className="home_head">We Bring The School Experience to Home</h1> 
-                 <h3 className="home_sub">Have problem in managing documents</h3> 
-                 <h3 className="home_sub">No Problem, EDUSTREAM is there for you!!!!!!</h3>
-                       <h3 className="home_sub">Never Stop learning, even at home </h3>
-              </Col>             
-              </Row>
+                <h1 className="home_head">We Bring The School Experience to Home</h1>
+                <span className="home_sub">Never Stop learning, even at home</span>
 
-              <Row style={{marginTop:"50px"}}>
+                <Row style={{marginTop:"50px"}}>
                   <Col  xs={12} xsOffset={6}>
                   {this.props.user.userData?
+                  
                   !this.props.user.userData.isAuth?
+                 
                    <Link  id="contact-submit" style={{fontFamily:"Times new roman",fontSize:"15px"}} to="/login">SignUp/SignIn</Link>
+                  
+                  
                   :
                   null
                  :null
-                   }
+  }
                   </Col>
                   
-              </Row>
+                </Row>
 
+              </Col>
+              
+              
+            </Row>
 
+          
+            <Row xs={1} md={1} lg={3} style={{marginTop:"100px"}}>
+
+              
+                <Col  className="p-3 "  style={{textAlign:"center"}}>
+
+                  <Row>
+                    <Col  xsOffset={6}>
+                        <i className="fas fa-file-alt home_works_img"/>
+                    </Col>
+
+                  </Row>
+                  <p className="home_works">Storing Your Achievements</p>
+                  <span className="home_works_sub">We give you a platform to store Records of your Achivements and Goals</span>
+
+                  
+              </Col>
+              <Col className="p-3"  style={{textAlign:"center"}}>
+              <Row >
+                    <Col  xsOffset={6}>
+                        <i className="fas fa-file-pdf home_works_img"/>
+                    </Col>
+
+                  </Row>
+                  <p className="home_works">CV Maker</p>
+                  <span className="home_works_sub">PDF CV/RESUME available from our website</span>
+
+                  
+              </Col>
+              <Col className="p-3"  style={{textAlign:"center"}}>
+              <Row>
+                    <Col  xsOffset={6}>
+                        <i className="fas fa-video home_works_img"/>
+                    </Col>
+
+                  </Row>
+                  <p className="home_works">Live Classrooms</p>
+                  <span className="home_works_sub">Join Chat-Rooms and Have an Online Video-Tutorial Experience</span>
+
+                  
+              </Col>
+            </Row>
+          
+            <Row xs={1} style={{marginTop:"100px",textAlign:"center"}}>
+                <p className="home_topic">How our WebSite Works:</p>
+            </Row>
+            <Row xs={1} style={{marginTop:"50px"}}>
+            
+              
+                <img className="img_flow" src={flow} />
+              
+            </Row>
+            
+          </Container>
+
+            <Container style={{margin:"100px 0"}} className="names" fluid>
+              
+            <Row xs={1} style={{textAlign:"center"}}>
+              <p className="home_top">Our Team</p>
+            </Row>
+            <Row xs={2} style={{backgroundColor:"#808080", marginTop:"30px",textAlign:"center"}}>
+              <Col xs={6}>
+                
+                  
+                  <h2 className="team_style">Saumyajeet Mukherjee</h2>
+                  
+                  
+                  <img src={aut1} className="author"/>
+                  
+
+                
+                
+              
+              </Col>
+              <Col xs={6} >
+              
+                  
+                  
+                  <img src={aut2} className="author"/>
+                  
+                  
+                  <h2 className="team_style">Sayanta Bhattacharjee</h2>
+                  
+
+                
+                
+                
+
+              </Col>
+            </Row>
           
             <Row style={{marginTop:"50px"}}>
               <Col xs={4}>
@@ -91,6 +181,9 @@ class Main extends Component {
               </Col>
             </Row>
           </Container>
+
+          </Aux>
+          
 
 //             <div className="container">
              

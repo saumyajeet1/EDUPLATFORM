@@ -37,7 +37,7 @@ export default function(ComposedClass,reload,adminRoute = null){
             if(this.state.loading){
                 return (
                     <div className="main_loader">
-                   <center>    <CircularProgress style={{color:'#2196F3'}} thickness={7}/> </center>
+                   <center>    <CircularProgress style={{color:'#2196F3',marginBottom:"500px"}} thickness={7}/> </center>
                     </div>
                 )
             }

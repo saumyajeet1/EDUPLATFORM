@@ -166,7 +166,7 @@ onrchange=(e)=>{
     render() {
         return (
             this.state.loading?
-        <center> <CircularProgress thickness={5} size={15} style={{color:'grey'}} />  </center>
+        <center> <CircularProgress thickness={5} size={15} style={{color:'grey',marginBottom:"500px"}} />  </center>
             :
             <div className="containers">
                 
