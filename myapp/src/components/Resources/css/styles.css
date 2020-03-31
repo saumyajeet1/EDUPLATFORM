@@ -1414,8 +1414,9 @@ section:last-child {
 		margin-bottom: 4px;
 	}
 }
-@media print {
-  header, footer { display: none !important; }
+@media print and (color) {
+  .bhut { display: none !important; }
+  
   @page { margin: 0; }
   body { margin: 1.6cm; }
   #cv {

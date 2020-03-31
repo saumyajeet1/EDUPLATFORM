@@ -25,52 +25,53 @@ componentDidMount(){
     render() {
         console.log(this.state.pic)
         return (
-            <div id="cv" class="instaFade_cv">
-	<div class="mainDetails_cv">
-		<div id="headshot" class="quickFade_cv">
-		{this.state.pic? <Pic image={this.state.pic?this.state.pic[0].url:null} text={"PHOTO"}/>:null}
+			<div>
+            <div id="cv" >
+	<div className="mainDetails_cv">
+		<div id="headshot" >
+		{this.state.pic? <Pic image={this.state.pic.length>0?this.state.pic[0].url:null} text={"PHOTO"}/>:null}
 		</div>
 		
 		<div id="name">
-			<h1 class="quickFade_cv delayTwo">{this.state.name}</h1>
-			<h2 class="quickFade_cv delayThree">{this.state.workplace}</h2>
+			<h1 >{this.state.name}</h1>
+			<h2 >{this.state.workplace}</h2>
 		</div>
 		
-		<div id="contactDetails" class="quickFade_cv delayFour">
+		<div id="contactDetails" >
 			<ul>
 				<li>email: <a href={`mailto:${this.state.email}`} target="_blank">{this.state.email}</a></li>
 				
 				<li>mobile: {this.state.phone}</li>
 			</ul>
 		</div>
-		<div class="clear"></div>
+		<div className="clear"></div>
 	</div>
 	
-	<div id="mainArea" class="quickFade_cv delayFive">
+	<div id="mainArea" >
 		<section>
 			<article>
-				<div class="sectionTitle">
+				<div className="sectionTitle">
 					<h1>Personal Profile</h1>
 				</div>
 				
-				<div class="sectionContent">
+				<div className="sectionContent">
 					<p>{this.state.additional}</p>
 				</div>
 			</article>
-			<div class="clear"></div>
+			<div className="clear"></div>
 		</section>
 		
 		
 		
 		<section>
-			<div class="sectionTitle">
+			<div className="sectionTitle">
 				<h1>Achievements</h1>
 			</div>
 			{
 			this.state.awards?
 			this.state.awards.map(el=>{
 				return(
-					<div class="sectionContent">
+					<div className="sectionContent">
 				<article>
 					<h2>{el}</h2>
 					
@@ -82,45 +83,46 @@ componentDidMount(){
 			}):null
 		}
 			
-			<div class="clear"></div>
+			<div className="clear"></div>
 		</section>
 		
 		
 		<section>
-			<div class="sectionTitle">
+			<div className="sectionTitle">
 				<h1>Key Skills</h1>
 			</div>
 			
-			<div class="sectionContent">
-				<ul class="keySkills">
+			<div className="sectionContent">
+				<ul className="keySkills">
 					{
 					this.state.skills?
 					this.state.skills.map(el=>{
 						return(
-							<li>{el}</li>
+							<li>{el.skill}</li>
 
 						);
 					}):null}
 					
 				</ul>
 			</div>
-			<div class="clear"></div>
+			<div className="clear"></div>
 		</section>
 		
 		
 		<section>
-			<div class="sectionTitle">
+			<div className="sectionTitle">
 				<h1>Education</h1>
 			</div>
 			
-			<div class="sectionContent">
+			<div className="sectionContent">
 				{
 				
 				this.state.academicrecords?
 				this.state.academicrecords.map(el=>{
 					return(
 					<article>
-					<h2>{el}</h2>
+					<h2>{el.name}</h2>
+					<p> {el.subject}</p>
 
 					</article>
 					);
@@ -128,14 +130,16 @@ componentDidMount(){
 				
 				
 			</div>
-			<div class="clear"></div>
+			<div className="clear"></div>
 		</section>
 		
 	</div>
 
 
     
-         <button onClick={()=> window.print()}>GENERATE PDF</button>
+
+	</div>
+         <button className="bhut" onClick={()=> window.print()}>GENERATE PDF</button>
         
             </div> 
  

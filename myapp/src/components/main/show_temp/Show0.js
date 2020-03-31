@@ -27,7 +27,7 @@ componentDidMount(){
             <div className="wrapper">
             <div className="sidebar-wrapper">
                 <div className="profile-container">
-                    {this.state.pic? <Pic image={this.state.pic?this.state.pic[0].url:null} text={"PHOTO"}/>:null}
+                    {this.state.pic? <Pic image={this.state.pic.length>0?this.state.pic[0].url:null} text={"PHOTO"}/>:null}
                    
                     <h1 className="name">{this.state.name}</h1>
                 </div>
@@ -112,24 +112,24 @@ componentDidMount(){
                 <section className="section experiences-section">
                     <h2 className="section-title"><span className="icon-holder"><i className="fas fa-briefcase"></i></span>Academic Records</h2>
                     {this.state.academicrecords?
-                    this.state.academicrecords.map(el=>{
-                        return(
+                    this.state.academicrecords.map(el=>(
+                        
                         <div className="item">
                         <div className="meta">
                             <div className="upper-row">
-                                <h3 className="job-title">{el}</h3>
+                                <h3 className="job-title">{el.name}</h3>
                                 {/* <div className="time">2015 - Present</div> */}
                             </div>
-                            {/* <div className="company">Startup Hubs, San Francisco</div> */}
+                            <div className="company">{el.subject}</div>
                         </div>
                         {/* <div className="details">
                             <p>Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo.</p>  
                             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
                         </div> */}
                     </div>
-                        );
                         
-                    }):null
+                        
+                    )):null
                     
                     }
                     
@@ -138,6 +138,22 @@ componentDidMount(){
                     
                     
                 </section>
+
+                {this.state.skills?
+                 this.state.skills.map((el,i)=>(
+                <section key={i} className="skills-section section">
+                    <h2 className="section-title"><span className="icon-holder"><i className="fas fa-rocket"></i></span>Skills &amp; Proficiency</h2>
+                    <div className="skillset">        
+                        <div className="item">
+                            <h3 className="level-title">{el.skill}</h3>
+                                                          
+                        </div>
+                        
+                        
+                        
+                    </div>  
+                </section>
+                 )):null}
                 
                 {/* <section className="section projects-section">
                     <h2 className="section-title"><span className="icon-holder"><i className="fas fa-archive"></i></span>Projects</h2>
