@@ -57,7 +57,7 @@ class ChatContainer extends Component {
 
 		if(this.props.user.userData.isAdmin){
 			this.socket.on('verifyroom',(roomlist)=>{
-			   if(roomlist.includes(roomname)){
+			   if(roomlist.includes(this.state.roomname)){
 				
 	           	socket.emit('subscribe',this.state.roomname)
 		   

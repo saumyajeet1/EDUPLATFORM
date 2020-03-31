@@ -27,7 +27,7 @@ const server = require('http').Server(app);
 
 require('dotenv').config();
 mongoose.Promise=global.Promise
-mongoose.connect(process.env.MONGODB_URI,{ useNewUrlParser: true })
+mongoose.connect('mongodb://edustream:5w0WZ7dqpRsUnj8D7LVw4qEfAeTvXmEDPwpUSqO6EZP1qdVvsZogEMtViY0KhyzqLoqcClHrD8ckWCRgkEgmuA==@edustream.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@edustream@',{useNewUrlParser:true})
 app.use(compression());
 
 app.use(bodyParser.urlencoded({extended:true}));
