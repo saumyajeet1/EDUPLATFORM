@@ -5,7 +5,7 @@ import {getrecords}  from '../../actions/recordactions';
 import Pic from '../../utils/pic';
 import {Container, Row, Col} from "react-bootstrap";
 import ButtonB from '../../UI/Button';
-import Aux from '../../hoc/Aux';
+
 
 class Show0 extends Component {
 
@@ -26,7 +26,7 @@ componentDidMount(){
     render() {
         console.log(this.state.pic)
         return (
-            <Aux>
+            <div>
             <div className="wrapper">
             <div className="sidebar-wrapper">
                 <div className="profile-container">
@@ -250,7 +250,7 @@ componentDidMount(){
             <div className="reg_row">
             <ButtonB id="contact-submit-reset" className="bhut" onClick={()=> window.print()} text="GENERATE PDF"/>
             </div>
-            </Aux>
+            </div>
  
        
         );

@@ -9,7 +9,7 @@ import { Grid } from '@material-ui/core';
 import flow from "../../images/flow.png"; 
 import aut1 from "../../images/aut1.png";
 import aut2 from "../../images/aut2.png";
-import Aux from "../hoc/Aux";
+
 import { Container, Row, Col, Jumbotron, Button, Image } from 'react-bootstrap';
 class Main extends Component {
 
@@ -48,7 +48,7 @@ class Main extends Component {
     render() {
         var height="560px";
         return (
-          <Aux>
+          <div>
               <Container style={{marginTop:"20px"}}>
             <Row >
     
@@ -182,7 +182,7 @@ class Main extends Component {
             </Row>
           </Container>
 
-          </Aux>
+          </div>
           
 
 //             <div className="container">

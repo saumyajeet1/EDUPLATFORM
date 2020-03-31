@@ -43,10 +43,10 @@ componentDidMount(){
                             Choose your template:
                         </h1>
                         <Container>
-                            <Row>
+                            <Row xs={1} md={2}>
                                 
-                                <Col><Card style={{cursor:"pointer"}} onClick={()=>this.loadTemplate(1)}><Card.Img variant="top" src={cv1} fluid/></Card></Col>
-                                <Col><Card style={{cursor:"pointer"}} onClick={()=>this.loadTemplate(2)}><Card.Img variant="top" src={cv2} responsive /></Card></Col>
+                                <Col xs={12} md={6}><Card style={{cursor:"pointer",margin:"50px 0"}} onClick={()=>this.loadTemplate(1)}><Card.Img variant="top" src={cv1} fluid/></Card></Col>
+                                <Col xs={12} md={6}><Card style={{cursor:"pointer",margin:"50px 0"}} onClick={()=>this.loadTemplate(2)}><Card.Img variant="top" src={cv2} responsive /></Card></Col>
                             </Row>
                         </Container>
                     </Jumbotron>
