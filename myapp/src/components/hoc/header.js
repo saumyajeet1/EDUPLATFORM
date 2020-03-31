@@ -126,7 +126,17 @@ class Header extends Component {
                     :null
                    }
                   
-     
+                  {
+                     this.props.user.userData?
+                     this.props.user.userData.isAuth?
+                   
+                    <li className="nav-item">
+                    <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"15px"}} to="/livechat" >Live Stream</Link>
+                    </li>
+                    :null
+                    :null
+                   }
+                  
                   
                   
                   

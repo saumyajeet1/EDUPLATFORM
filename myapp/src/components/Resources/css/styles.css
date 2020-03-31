@@ -311,6 +311,21 @@
   height:600px;
   width:800px;
 }
+.not_img{
+  height:100%;
+  width:100%;
+}
+@media(max-width:700px){
+  .not_img{
+    height:100%;
+ 
+  }
+  .notfound{
+    margin-right: 100px;
+    height:400px;
+    width:300px;
+  }
+}
 
 
                     /*Header*/
