@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 import {log} from "../actions/memberactions"
 import logo from '../../images/logo.png'
+import { NavDropdown } from 'react-bootstrap';
 
 class Header extends Component {
   
@@ -66,28 +67,51 @@ class Header extends Component {
                     :null
                     :null
                    }
-           
-           {
+
+                  <li className="nav-item">
+                  <NavDropdown className="nav-link" title="Add User Data" id="basic-nav-dropdown">
+                          <NavDropdown.Item >{
                      this.props.user.userData?
                      this.props.user.userData.isAuth?
                    
                     <li className="nav-item">
-                    <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"10px"}} to="/skill" >ADD SKILLS</Link>
+                    <Link className ="nav-link" style={{color:"black",fontFamily:"Times new roman",fontSize:"10px"}} to="/skill" >ADD SKILLS</Link>
                     </li>
                     :null
                     :null
-                   }
-                   
-             {
+                   }</NavDropdown.Item>
+                          
+                          
+                          <NavDropdown.Item >{
                      this.props.user.userData?
                      this.props.user.userData.isAuth?
                    
                     <li className="nav-item">
-                    <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"10px"}} to="/addaward" >ADD AWARD</Link>
+                    <Link className ="nav-link" style={{color:"black",fontFamily:"Times new roman",fontSize:"10px"}} to="/addaward" >ADD AWARD</Link>
                     </li>
                     :null
                     :null
-                   }
+                   }</NavDropdown.Item>
+                          
+                          <NavDropdown.Item >{
+                     this.props.user.userData?
+                     this.props.user.userData.isAuth?
+                   
+                    <li className="nav-item">
+                    <Link className ="nav-link" style={{color:"black",fontFamily:"Times new roman",fontSize:"10px"}} to="/addacademic" >ADD ACADEMIC RECORDS</Link>
+                    </li>
+                    :null
+                    :null
+                   }</NavDropdown.Item>
+                         
+                            
+                         </NavDropdown>
+                   
+
+                  </li>
+
+                  
+             
 
                   {
                      this.props.user.userData?
@@ -101,16 +125,7 @@ class Header extends Component {
                    }
                   
      
-                  {
-                     this.props.user.userData?
-                     this.props.user.userData.isAuth?
-                   
-                    <li className="nav-item">
-                    <Link className ="nav-link" style={{fontFamily:"Times new roman",fontSize:"10px"}} to="/addacademic" >ADD ACADEMIC RECORDS</Link>
-                    </li>
-                    :null
-                    :null
-                   }
+                  
                   
                   
                 
