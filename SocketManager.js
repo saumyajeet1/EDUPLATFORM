@@ -4,47 +4,11 @@ let connectedPeers = new Map()
 
 
 module.exports = function(socket){
-
-	// //Verify Username
-	// socket.on(VERIFY_USER, (nickname, callback)=>{
-	// 	if(isUser(connectedUsers, nickname)){
-	// 		callback({ isUser:true, user:null })
-	// 	}else{
-	// 		callback({ isUser:false, user:createUser({name:nickname, socketId:socket.id})})
-	// 	}
-	// })  
-
-	// socket.on('adduser',(user)=>{
-	// socket.user=user	
-	// })
-
-	// })
 	roomList()
-
-
-	// socket.on('verifyrooms', (roomname, callback)=>{
-	// 	console.log('ddjjj')
-		
-	// 	if(isUser(availableRooms, roomname)){
-	// 		console.log(availableRooms,roomname)
-	// 		callback({ isRoom:true, user:null })
-	// 	}else{
-	// 		callback({ isRoom:false, room:{room:roomname}})
-	// 	}
-	// })
 
       socket.on('error',function(err){
        console.log(err)
 	  })
-	//User disconnects
-	// socket.on('disconnect', ()=>{
-	// 	// if("user" in socket){
-	// 	// 	connectedUsers = removeUser(connectedUsers, socket.user.name)
-
-	// 	// 	io.emit(USER_DISCONNECTED, connectedUsers)
-	// 		console.log("Disconnect");
-	// 	// }
-	// })
 
 	socket.emit('connection-success', { success: socket.id })
 
@@ -87,7 +51,6 @@ module.exports = function(socket){
 
 		}
 		console.log(roomname,user)
-		// console.log(io.sockets.clients(roomname))
 	
 		io.of('/').to(roomname).emit("activemessage",{message})
 

@@ -4,11 +4,8 @@ import {getrecords}  from '../../actions/recordactions';
 // import FieldRow from "../utils/formrow"
 import Pic from '../../utils/pic';
 import {Container, Row, Col} from "react-bootstrap";
-<<<<<<< HEAD
-=======
 import ButtonB from '../../UI/Button';
-import Aux from '../../hoc/Aux';
->>>>>>> 40d3ef151237809cc6a77f1a34cfd06f9d852280
+
 
 class Show0 extends Component {
 
@@ -29,10 +26,7 @@ componentDidMount(){
     render() {
         console.log(this.state.pic)
         return (
-<<<<<<< HEAD
-=======
-            <Aux>
->>>>>>> 40d3ef151237809cc6a77f1a34cfd06f9d852280
+            <div>
             <div className="wrapper">
             <div className="sidebar-wrapper">
                 <div className="profile-container">
@@ -58,8 +52,6 @@ componentDidMount(){
                     </div>
                     
                 </div>
-<<<<<<< HEAD
-=======
 
                 <div className="address-list container-block">
                     <h2 className="container-block-title">ADDRESS</h2>
@@ -68,7 +60,6 @@ componentDidMount(){
                     </div>
                     
                 </div>
->>>>>>> 40d3ef151237809cc6a77f1a34cfd06f9d852280
                 
                 {/* <div className="languages-container container-block">
                     <h2 className="container-block-title">Languages</h2>
@@ -252,12 +243,6 @@ componentDidMount(){
      
            
 
-<<<<<<< HEAD
-    
-         <button className="bhut" onClick={()=> window.print()}>GENERATE PDF</button>
-        
-            </div> 
-=======
                 
           
         
@@ -265,9 +250,7 @@ componentDidMount(){
             <div className="reg_row">
             <ButtonB id="contact-submit-reset" className="bhut" onClick={()=> window.print()} text="GENERATE PDF"/>
             </div>
-            </Aux>
->>>>>>> 40d3ef151237809cc6a77f1a34cfd06f9d852280
- 
+ </div>
        
         );
     }
