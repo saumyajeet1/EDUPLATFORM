@@ -27,7 +27,7 @@ const server = require('http').Server(app);
 
 require('dotenv').config();
 mongoose.Promise=global.Promise
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URI,{ useNewUrlParser: true })
 app.use(compression());
 
 app.use(bodyParser.urlencoded({extended:true}));
