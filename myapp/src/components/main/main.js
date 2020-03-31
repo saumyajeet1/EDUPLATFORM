@@ -9,6 +9,7 @@ import { Grid } from '@material-ui/core';
 import flow from "../../images/flow.png"; 
 import aut1 from "../../images/aut1.png";
 import aut2 from "../../images/aut2.png";
+<<<<<<< HEAD
 // import Aux from "../hoc/Aux";
 import { Container, Row, Col, Jumbotron, Button, Image } from 'react-bootstrap';
 class Main extends Component {
@@ -17,6 +18,48 @@ class Main extends Component {
         var height="560px";
         return (
           <div>
+=======
+import Aux from "../hoc/Aux";
+import { Container, Row, Col, Jumbotron, Button, Image } from 'react-bootstrap';
+class Main extends Component {
+
+    state={
+        news:'',
+    }
+    
+  //    newslist=()=>(
+  //        this.state.news?
+       
+  //        this.state.news.map((item,i)=>(        
+  // <a href="#" className="list-group-item list-group-item-action flex-column align-items-start">
+  // <div className="d-flex w-100 justify-content-between">
+  //   <h5 className="mb-1">CREATED AT {item.createdAt}</h5>
+  
+  // </div>
+  //    <p className="mb-1">{item.subject}</p>
+  //    <p className="mb-1">BY {item.author}</p>
+  // </a>
+  //        ))
+  //        :null
+  //       )
+      
+
+  //   componentWillMount(){
+  //       this.props.dispatch(allnews()).then(response=>{
+  //           console.log(response.payload)
+  //           this.setState({
+  //               news:response.payload
+  //           })
+  //       }).catch(err=>console.log(err))
+  //   }
+
+
+
+    render() {
+        var height="560px";
+        return (
+          <Aux>
+>>>>>>> 40d3ef151237809cc6a77f1a34cfd06f9d852280
               <Container style={{marginTop:"20px"}}>
             <Row >
     
@@ -115,6 +158,7 @@ class Main extends Component {
                   
                   <img src={aut1} className="author"/>
                   
+<<<<<<< HEAD
 
                 
                 
@@ -134,6 +178,27 @@ class Main extends Component {
                 
                 
 
+=======
+
+                
+                
+              
+              </Col>
+              <Col xs={6} >
+              
+                  
+                  
+                  <img src={aut2} className="author"/>
+                  
+                  
+                  <h2 className="team_style">Sayanta Bhattacharjee</h2>
+                  
+
+                
+                
+                
+
+>>>>>>> 40d3ef151237809cc6a77f1a34cfd06f9d852280
               </Col>
             </Row>
           
@@ -150,7 +215,34 @@ class Main extends Component {
             </Row>
           </Container>
 
+<<<<<<< HEAD
            </div>
+=======
+          </Aux>
+          
+
+//             <div className="container">
+             
+//         <div id="myCarousel" className="carousel slide" data-ride="carousel" style={{objectFit:"cover"}}>
+//           <ol className="carousel-indicators">
+//             <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
+//             <li data-target="#myCarousel" data-slide-to="1"></li>
+//             <li data-target="#myCarousel" data-slide-to="2"></li>
+//           </ol>
+//           <div className="carousel-inner">
+      
+//             <div className="item active" style={{objectFit:"cover"}}>
+//               <img src={four} alt="eduplat" />
+//               <div className="carousel-caption">
+//               </div>
+//             </div>
+      
+//             <div className="item">
+//               <img src={five} alt="eduplat"/>
+//               <div className="carousel-caption">
+//               </div>
+//             </div>
+>>>>>>> 40d3ef151237809cc6a77f1a34cfd06f9d852280
           
 
         );
