@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link,withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {writeuser} from './actions/recordactions'
+import { Row, Container, Jumbotron, Card, Button, Form } from 'react-bootstrap';
 
 class LoginForm extends Component {
 	  
@@ -47,9 +48,42 @@ class LoginForm extends Component {
 	render() {
 		const { roomname, error } = this.state
 		return (
+
+
+			
 		
-			<div className="row">
-				<form onSubmit={this.handleSubmit} className="login-form" >
+				<Container>
+					<Row xs={1}>
+					<Jumbotron style={{width:"60%"}} xs={12}>
+						<h1>Enter Room name:</h1>
+						<p>
+						<Card style={{width:"80%"}} xs={12}>
+							<Card.Body>
+								<Form onSubmit={this.handleSubmit}>
+								<Form.Group controlId="formGridAddress1">
+								<Form.Label>Room Name</Form.Label>
+								<Form.Control 
+									ref={(input)=>{ this.textInput = input }}
+									as="input"
+									value={roomname}
+									onChange={this.handleChange}
+									id="nickname"/>
+								
+							</Form.Group>
+								<Button  variant="primary" type="submit">
+									Submit
+								</Button>
+								</Form>
+							
+							</Card.Body>
+						</Card>
+							
+							</p>
+					</Jumbotron>
+
+					</Row>
+					
+				{/* <form onSubmit={this.handleSubmit} className="login-form" >
 
 					<label htmlFor="nickname">
 						{
@@ -76,8 +110,8 @@ class LoginForm extends Component {
 							 Send
 					 </button>
 
-				</form>
-				</div>
+				</form> */}
+				</Container>
 		
 		);
 	}

@@ -7,6 +7,7 @@ import Live from './live';
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {endsession} from '../actions/recordactions'
+import { Container, Row, Col, Jumbotron } from 'react-bootstrap';
 
 const socketUrl = "http://localhost:3002"
 class ChatContainer extends Component {
@@ -40,7 +41,7 @@ class ChatContainer extends Component {
 				})
 		
 				this.setState({socket:socket})
-				socket.on("activemessage",(message)=>{
+				socket.on("activemessage",(message,user)=>{
 					console.log(message)
 					this.setActiveChat(message)
 					   let	newchat=[...this.state.chats,message]
@@ -75,7 +76,8 @@ class ChatContainer extends Component {
      	setInterval(()=>{
 			console.log(this.state.chats)		
             },5000)
-	                  }
+					  }
+	
 	
 	sendMessage = ( message)=>{
 		console.log(message,this.state.roomname,this.state.name)
@@ -107,55 +109,75 @@ class ChatContainer extends Component {
 		const { user, logout } = this.props
 		const { chats, activeChat } = this.state
 		return (
-			<div className="container">
-					<Live socket={this.state.socket}/>
-					<br></br><br></br><br></br>
-					<div className="row">
-				<div className="chat-room-container" style={{margin:"4px"}}>
-					 
-				<div className="row">           
-							<div className="chat-room" style={{border:"2px solid black"}}>
-			
-								 {this.state.chats.length>0?
-								   <Messages
-									messages={this.state.chats}
-									user={user}
-									typingUsers={activeChat.typingUsers}
-									/>
-									:null
-									}
-									</div>
-									</div>
-									<br></br><br></br><br></br><br></br><br></br>
-									<br></br><br></br>
-									<div className="row">
-								        <MessageInput sendMessage={this.sendMessage}/>
-									</div>
-
-							
+			<Container>
+				<Jumbotron>
+				<Row>
+					<Col xs={12}>
+					<Row xs={1}>
+						<Live socket={this.state.socket}/>
+					</Row>
+					<Row xs={1}>
 					
-				</div>
-				</div>
+					<div className="chat-room-container" style={{width:"100%",height:"100%",margin:"4px"}}>
+					 
+					 	
+						 <div className="chat-room" style={{border:"2px solid black"}}>
+				 
+				 {this.state.chats.length>0?
+				   <Messages
+					messages={this.state.chats}
+					user={user}
+					typingUsers={activeChat.typingUsers}
+					/>
+					:null
+					}
+					</div>
+					
+					
+					
+						<MessageInput sendMessage={this.sendMessage}/>
+						           
+								 
+										 
+	 
+								 
+						 
+					 </div>
+
+					
+				
+				
 				{this.props.user.userData.isAdmin?
 				<button
 				onClick={e=>this.endsession(e)}
 						type = "submit"
 						className = "send"
 				>
-					<Link to="/livechat">
+					<Link className = "contact-submit-reset" to="/livechat">
 							 END SESSION
 					</Link>
 				</button>:
 				<button
 				type = "submit"
-				className = "send"
+				
 		>
-			<Link to="/livechat">
+			<Link className = "contact-submit-reset" to="/livechat">
 					 GO BACK
 			</Link>
 		</button>
 	}
-			</div>
+
+					</Row>
+					</Col>
+				</Row>
+
+				</Jumbotron>
+				
+					
+
+					
+
+			</Container>
 		);
 	}
 }

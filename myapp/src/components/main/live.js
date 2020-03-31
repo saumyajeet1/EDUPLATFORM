@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 
 import {connect} from 'react-redux'
+import { Jumbotron, Row, Col, Container } from 'react-bootstrap';
 
 class Live extends Component {
   constructor(props) {
@@ -134,8 +135,10 @@ class Live extends Component {
   render() {
 console.log( this.props.user.userData.isAdmin)
     return (
-      <div className="row ">
-      {
+
+      <Container>
+        <p>
+        {
       this.props.user.userData.isAdmin?
         <video
           style={{
@@ -161,18 +164,32 @@ console.log( this.props.user.userData.isAdmin)
           >
         </video>
   }
-        <br />
+
+        </p>
+        
+<Row xs={1}>
+  <Col xs={12}>
+  <br />
         {
         this.props.user.userData.isAdmin?
         // <button onClick={this.createOffer}>Offer</button>:
         null:
         <button className="btn btn-success"
-        onClick={this.createAnswer}>Answer</button>
+        onClick={this.createAnswer}>Join Chat</button>
         }
         <br />
         {/* <textarea style={{ width: 450, height:40 }} ref={ref => { this.textref = ref }} /> */}
         
-      </div>
+        
+
+  </Col>
+</Row>
+      
+
+      
+      
+
+      </Container>
     )
   }
 }
