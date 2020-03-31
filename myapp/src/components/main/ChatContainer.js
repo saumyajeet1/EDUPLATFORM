@@ -64,8 +64,16 @@ class ChatContainer extends Component {
 		
 		const roomname=this.state.roomname
 		const name=this.state.name
+         this.socket.on('verifyroom',(roomlist)=>{
+			if(roomlist.includes(roomname)){
+				this.state.socket.emit("message", {roomname,name,message} )
 		
-		this.state.socket.emit("message", {roomname,name,message} )
+			}else{
+				setTimeout(()=>{
+					this.props.history.push(`/livechat?answer='ROOM ALREADY PRESENT'`);
+				},3000)
+			}
+		 })		
 		
 	}
 
