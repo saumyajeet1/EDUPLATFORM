@@ -919,9 +919,9 @@ fieldset {
 .sidebar-wrapper {
   background: #42A8C0;
   position: absolute;
-  right: 0;
+  left: 0;
   width: 240px;
-  min-height: 440px;
+  min-height: 100%;
   color: #fff;
 }
 
@@ -964,7 +964,14 @@ fieldset {
 .sidebar-wrapper .contact-list li {
   margin-bottom: 15px;
 }
+.sidebar-wrapper .address-list{
+  font-size: 12px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color:rgb(253, 253, 253);
+  padding:5px;
+  overflow:auto;
 
+}
 .sidebar-wrapper .contact-list li:last-child {
   margin-bottom: 0;
 }
@@ -1044,7 +1051,7 @@ fieldset {
 .main-wrapper {
   background: #fff;
   padding: 60px;
-  padding-right: 300px;
+  padding-left: 250px;
 }
 
 .main-wrapper .section-title {
@@ -1080,7 +1087,7 @@ fieldset {
 
 .main-wrapper .section-title .icon-holder .svg-inline--fa {
   font-size: 14px;
-  margin-top: 6px;
+  margin-top: 10px;
 }
 
 .main-wrapper .section {

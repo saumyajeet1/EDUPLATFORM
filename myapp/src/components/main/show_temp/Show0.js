@@ -4,6 +4,8 @@ import {getrecords}  from '../../actions/recordactions';
 // import FieldRow from "../utils/formrow"
 import Pic from '../../utils/pic';
 import {Container, Row, Col} from "react-bootstrap";
+import ButtonB from '../../UI/Button';
+import Aux from '../../hoc/Aux';
 
 class Show0 extends Component {
 
@@ -24,6 +26,7 @@ componentDidMount(){
     render() {
         console.log(this.state.pic)
         return (
+            <Aux>
             <div className="wrapper">
             <div className="sidebar-wrapper">
                 <div className="profile-container">
@@ -46,6 +49,14 @@ componentDidMount(){
                     <h2 className="container-block-title">Current Degree</h2>
                     <div className="item">
                         <h4 className="degree">{this.state.currentdegree}</h4>
+                    </div>
+                    
+                </div>
+
+                <div className="address-list container-block">
+                    <h2 className="container-block-title">ADDRESS</h2>
+                    <div className="item">
+                        <h4 className="degree">{this.state.address}</h4>
                     </div>
                     
                 </div>
@@ -232,10 +243,14 @@ componentDidMount(){
      
            
 
-    
-         <button className="bhut" onClick={()=> window.print()}>GENERATE PDF</button>
+                
+          
         
             </div> 
+            <div className="reg_row">
+            <ButtonB id="contact-submit-reset" className="bhut" onClick={()=> window.print()} text="GENERATE PDF"/>
+            </div>
+            </Aux>
  
        
         );
