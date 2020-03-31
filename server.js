@@ -6,6 +6,7 @@ const formidable=require('express-formidable')
 const {auth}=require('./server/middleware/auth')
 const cloudinary=require('cloudinary')
 const {Record}=require("./server/models/records")
+const {Member}=require("./server/models/Member")
 const jwt=require('jsonwebtoken')
 const fs = require('fs')
 
