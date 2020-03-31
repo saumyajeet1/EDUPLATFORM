@@ -35,21 +35,20 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "repo": "npm run start --prefix myapp",
-    "dev": "concurrently \"npm run server\" \"npm run repo\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix myapp && npm run build --prefix myapp"
+    "dev": "concurrently \"npm run server\" \"npm run repo\""
   },
   "engines": {
     "node": "10.14.1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saumyajeet1/CHESS"
+    "url": "git+https://github.com/saumyajeet1/EDUPLATFORM"
   },
   "keywords": [],
   "author": "SAUMYAJEET MUKHERJEE",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/saumyajeet1/CHESS/issues"
+    "url": "https://github.com/saumyajeet1/EDUPLATFORM/issues"
   },
-  "homepage": "https://github.com/saumyajeet1/CHESS#readme"
+  "homepage": "https://github.com/saumyajeet1/EDUPLATFORM#readme"
 }

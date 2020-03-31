@@ -53,7 +53,25 @@ class ChatContainer extends Component {
 	componentDidMount() {
 		const socket=this.state.socket
 		console.log(this.state.roomname)
+
+		if(this.props.user.userData.isAdmin){
+			this.socket.on('verifyroom',(roomlist)=>{
+			   if(roomlist.includes(roomname)){
+				
+	           	socket.emit('subscribe',this.state.roomname)
+		   
+			   }else{
+				   setTimeout(()=>{
+					   this.props.history.push(`/livechat?answer='ROOM ALREADY PRESENT'`);
+				   },3000)
+			   }
+			})		
+		   
+	   }else{
+			  
 		socket.emit('subscribe',this.state.roomname)
+		   
+	   }
      	setInterval(()=>{
 			console.log(this.state.chats)		
             },5000)
@@ -64,18 +82,11 @@ class ChatContainer extends Component {
 		
 		const roomname=this.state.roomname
 		const name=this.state.name
-         this.socket.on('verifyroom',(roomlist)=>{
-			if(roomlist.includes(roomname)){
-				this.state.socket.emit("message", {roomname,name,message} )
 		
-			}else{
-				setTimeout(()=>{
-					this.props.history.push(`/livechat?answer='ROOM ALREADY PRESENT'`);
-				},3000)
-			}
-		 })		
+			this.state.socket.emit("message", {roomname,name,message} )
 		
-	}
+	
+}
 
     
 	setActiveChat = (activeChat)=>{
