@@ -5,10 +5,7 @@ const mongoose=require('mongoose')
 const formidable=require('express-formidable')
 const {auth}=require('./server/middleware/auth')
 const cloudinary=require('cloudinary')
-const { admin } = require('./server/middleware/admin');
-const {Member}=require("./server/models/Member")
 const {Record}=require("./server/models/records")
-const {Award}=require("./server/models/Award")
 const jwt=require('jsonwebtoken')
 const fs = require('fs')
 
@@ -225,33 +222,33 @@ app.get('/api/records/allalum',auth,(req,res)=>{
     })
  })
 
- app.get('/api/records/allawards',(req,res)=>{
-    console.log('hhhh')
-     Award
-     .find()
-     .exec((err,allawards)=>{
-         if(err){
-             console.log(err)
-             res.status(400).send(err)
+//  app.get('/api/records/allawards',(req,res)=>{
+//     console.log('hhhh')
+//      Award
+//      .find()
+//      .exec((err,allawards)=>{
+//          if(err){
+//              console.log(err)
+//              res.status(400).send(err)
              
-         }
-        return res.status(200).send(allawards)
-     })
-  })
+//          }
+//         return res.status(200).send(allawards)
+//      })
+//   })
  
-  app.get('/api/records/allacademic',(req,res)=>{
-    console.log('hhhh')
-     Academic
-     .find()
-     .exec((err,allacademic)=>{
-         if(err){
-             console.log(err)
-             res.status(400).send(err)
+//   app.get('/api/records/allacademic',(req,res)=>{
+//     console.log('hhhh')
+//      Academic
+//      .find()
+//      .exec((err,allacademic)=>{
+//          if(err){
+//              console.log(err)
+//              res.status(400).send(err)
              
-         }
-        return res.status(200).send(allacademic)
-     })
-  })
+//          }
+//         return res.status(200).send(allacademic)
+//      })
+//   })
  
  
 app.post('/api/records/searchyr',auth,(req,res)=>{
@@ -358,18 +355,6 @@ app.post('/api/records/adddetail',auth,(req,res)=>{
 })
 
 
-// app.post('/api/records/addaward',auth,(req,res)=>{
-  
-//     const award = new Award(req.body);
-//     award.save((err,doc)=>{
-//         console.log(err)
-//         if(err) return res.json({success:false,err});
-//         res.status(200).json({
-//             success: true,doc
-//         })
-//         console.log(doc.name)  
-//     })
-// })
 app.post('/api/records/addacademic',auth,(req,res)=>{
     Member.findOne({
         '_id':req.user._id
@@ -455,18 +440,6 @@ app.post('/api/records/addskill',auth,(req,res)=>{
    
 })
 })
-// app.post('/api/records/addacademic',auth,(req,res)=>{
-  
-//     const academic = new Academic(req.body);
-//     academic.save((err,doc)=>{
-//         console.log(err)
-//         if(err) return res.json({success:false,err});
-//         res.status(200).json({
-//             success: true,doc
-//         })
-//         console.log(doc.name)  
-//     })
-// })
 
 
 app.post('/api/records/removerecord',auth,(req,res)=>{

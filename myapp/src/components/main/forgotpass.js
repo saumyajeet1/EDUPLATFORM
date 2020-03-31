@@ -125,30 +125,7 @@ if(isformvalid){
 
                 </div>
                 </div>
-            {/* <div>
-                <img src={hexa} id="image"/>
-              </div>
-               
-                <div className="block row">
-                  <FormFields
-                  formdata={this.state.formdata.password}
-                  id={'password'}
-                  change={(event)=>{this.updateform(event)}}
-                />
-                </div><br></br>
-
-                <div className="block row">
-                <FormFields
-                  formdata={this.state.formdata.confirmpassword}
-                  id={'confirmpassword'}
-                  change={(event)=>{this.updateform(event)}}
-                />
-                </div>
-
-                <br></br>
-                
-                <br></br>
-                <br></br> */}
+       
                 <fieldset>
              
                 <button class="contact-submit" style={{padding:"10px"}} onClick={(event)=> this.submitform(event)}>

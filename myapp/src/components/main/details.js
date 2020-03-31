@@ -117,37 +117,6 @@ class Details extends Component {
             label:true
         },
         
-        // academicrecords: {
-        //     element:'textarea',
-        //     value:'',
-        //     config:{
-        //         name:'Academic Qualifications',
-        //        type:'text',
-        //        placeholder:'Enter academic qualifications here',  
-        //     },
-        //     validation:{
-        //         required:true
-        //     },
-        //     valid:false,
-        //     validationMessage:'',
-        //     label:true
-        // },
-        
-        // awards: {
-        //     element:'textarea',
-        //     value:'',
-        //     config:{
-        //         name:'Awards',
-        //        type:'text',
-        //        placeholder:'Enter awards and acheivements here',  
-        //     },
-        //     validation:{
-        //         required:true
-        //     },
-        //     valid:false,
-        //     validationMessage:'',
-        //     label:true
-        // },
         email: {
             element:'input',
             value:'',

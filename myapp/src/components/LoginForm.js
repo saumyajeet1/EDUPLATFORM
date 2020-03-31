@@ -11,22 +11,10 @@ class LoginForm extends Component {
 		  roomList:[]
 	  }
 
-	// setUser = ({room, isRoom})=>{
-
-	// 	if(isRoom){
-	// 		this.setState({error:"Room Name already taken"})
-	// 	}else{
-	// 		this.setState({error:""})
-	// 	}
-	// }
-
 
 	handleSubmit = (e)=>{
 		e.preventDefault()
 		const roomname = this.state.roomname
-		//socket.emit("verifyrooms", roomname, this.setUser)
-
-		// if(this.state.error==''){
 		const user=this.props.user.userData.name
 		this.props.dispatch(writeuser(user,roomname)).then((res)=>{
            console.log(res)
@@ -55,21 +43,6 @@ class LoginForm extends Component {
 		this.setState({roomname:e.target.value})
 	}
 
-
-	// displayList=()=>(
-         
-	// 	this.state.roomList?
-	// 	this.state.roomList.map((room,i)=>{
-	// 		return (
-	// 			<tr key={i}>
-	// 			<th scope="row">{i+1}</th>
-	// 		<td><Link to={`/chat?room=${this.state.roomname}&name=${this.props.user}`}>{room}</Link></td>
-	// 		  </tr>
-		   
-	// 		)
-	// 	}):
-	// 	null
-	// )
 
 	render() {
 		const { roomname, error } = this.state

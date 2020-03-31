@@ -251,16 +251,14 @@ componentDidMount(){
             <ButtonB id="contact-submit-reset" className="bhut" onClick={()=> window.print()} text="GENERATE PDF"/>
             </div>
             </div>
- 
-       
-        );
-    }
-}
+        )}
+            }
+
 
 const mapStateToProps=(state)=>{
     
     return{
-      record:state.record
+      record:state.record,
     }
       
 }

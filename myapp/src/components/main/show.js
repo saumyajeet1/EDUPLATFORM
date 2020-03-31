@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {getrecords}  from '../actions/recordactions';
-import FieldRow from "../utils/formrow"
-import Pic from '../utils/pic';
 import { Container, Card, Col, Row } from 'react-bootstrap';
 import { Jumbotron } from 'react-bootstrap';
 import Show0 from './show_temp/Show0';
@@ -57,6 +55,7 @@ componentDidMount(){
         );
 
         return (
+
             <div className="show_cv">
                 {sub}
             </div>

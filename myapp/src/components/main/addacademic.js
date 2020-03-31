@@ -40,21 +40,6 @@ class Addacademic extends Component {
             validationMessage:'',
             label:true
         },
-        // year: {
-        //     element:'input',
-        //     value:'',
-        //     config:{
-        //         name:'DATE',
-        //         placeholder:'Enter the date of event',
-        //         type:'text'
-        //     },
-        //     validation:{
-        //         required:false
-        //     },
-        //     valid:true,
-        //     validationMessage:'',
-        //     label:true
-        // },
         images:{
             value:[],
             validation:{
